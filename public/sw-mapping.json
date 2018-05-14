@@ -1,0 +1,8 @@
+{
+  "config": {
+    "fullPublicPath": "/public/",
+    "publicPath": "/public/",
+    "outputPath": "public"
+  },
+  "service-worker.js": "service-worker.5bd1dd8e.js"
+}

@@ -1,0 +1,57 @@
+{
+  "app/app.js": "/public/js/app/app.js",
+  "css/module/module.js": "/public/js/css/module/module.js",
+  "index/index.js": "/public/js/index/index.js",
+  "register/register.js": "/public/js/register/register.js",
+  "sass/sass.js": "/public/js/sass/sass.js",
+  "js/chunk/0.js": "/public/js/chunk/0.js",
+  "img/egg-vue-webpack-dev.png": "/public/img/egg-vue-webpack-dev.png",
+  "img/logo.png": "/public/img/logo.png",
+  "font/element-icons.ttf": "/public/font/element-icons.ttf",
+  "font/element-icons.woff": "/public/font/element-icons.woff",
+  "img/loading.gif": "/public/img/loading.gif",
+  "js/vendor.js": "/public/js/vendor.js",
+  "vendor.js": "/public/js/vendor.js",
+  "deps": {
+    "app/app.js": {
+      "js": [
+        "/public/js/vendor.js",
+        "/public/js/app/app.js"
+      ],
+      "css": []
+    },
+    "css/module/module.js": {
+      "js": [
+        "/public/js/vendor.js",
+        "/public/js/css/module/module.js"
+      ],
+      "css": []
+    },
+    "index/index.js": {
+      "js": [
+        "/public/js/vendor.js",
+        "/public/js/index/index.js"
+      ],
+      "css": []
+    },
+    "register/register.js": {
+      "js": [
+        "/public/js/vendor.js",
+        "/public/js/register/register.js"
+      ],
+      "css": []
+    },
+    "sass/sass.js": {
+      "js": [
+        "/public/js/vendor.js",
+        "/public/js/sass/sass.js"
+      ],
+      "css": []
+    }
+  },
+  "info": {
+    "publicPath": "/public/",
+    "buildPath": "public",
+    "mapped": true
+  }
+}

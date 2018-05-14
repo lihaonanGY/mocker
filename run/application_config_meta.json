@@ -1,0 +1,351 @@
+{
+  "siteFile": {
+    "/favicon.ico": "/Users/lihaonan/github-project/mocker/config/config.default.js"
+  },
+  "view": {
+    "cache": "/Users/lihaonan/github-project/mocker/node_modules/egg-view/config/config.local.js",
+    "root": "/Users/lihaonan/github-project/mocker/node_modules/egg-view/config/config.default.js",
+    "defaultExtension": "/Users/lihaonan/github-project/mocker/node_modules/egg-view/config/config.default.js",
+    "defaultViewEngine": "/Users/lihaonan/github-project/mocker/node_modules/egg-view/config/config.default.js",
+    "mapping": {
+      ".js": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js"
+    }
+  },
+  "vuessr": {
+    "layout": "/Users/lihaonan/github-project/mocker/config/config.default.js",
+    "renderOptions": {
+      "basedir": "/Users/lihaonan/github-project/mocker/config/config.default.js"
+    },
+    "injectCss": "/Users/lihaonan/github-project/mocker/config/config.local.js",
+    "doctype": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js",
+    "manifest": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js",
+    "injectHeadRegex": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js",
+    "injectBodyRegex": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js",
+    "injectJs": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js",
+    "crossorigin": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js",
+    "injectRes": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js",
+    "fallbackToClient": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js",
+    "cache": {
+      "max": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js",
+      "maxAge": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js"
+    },
+    "afterRender": "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/config.default.js"
+  },
+  "logger": {
+    "consoleLevel": "/Users/lihaonan/github-project/mocker/config/config.default.js",
+    "dir": "/Users/lihaonan/github-project/mocker/config/config.default.js",
+    "encoding": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "env": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "level": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "outputJSON": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "buffer": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "appLogName": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "coreLogName": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "agentLogName": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "errorLogName": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.local.js"
+    },
+    "allowDebugAtProd": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+  },
+  "static": {
+    "prefix": "/Users/lihaonan/github-project/mocker/config/config.default.js",
+    "dir": "/Users/lihaonan/github-project/mocker/config/config.default.js",
+    "maxAge": "/Users/lihaonan/github-project/mocker/config/config.local.js",
+    "dynamic": "/Users/lihaonan/github-project/mocker/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/lihaonan/github-project/mocker/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/lihaonan/github-project/mocker/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/lihaonan/github-project/mocker/node_modules/egg-static/config/config.default.js"
+  },
+  "keys": "/Users/lihaonan/github-project/mocker/config/config.default.js",
+  "middleware": "/Users/lihaonan/github-project/mocker/config/config.default.js",
+  "security": {
+    "csrf": {
+      "enable": "/Users/lihaonan/github-project/mocker/config/config.default.js",
+      "useSession": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "headerName": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "queryName": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+    },
+    "domainWhiteList": "/Users/lihaonan/github-project/mocker/config/config.local.js",
+    "protocolWhiteList": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+    "xframe": {
+      "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.local.js",
+      "maxAge": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "/Users/lihaonan/github-project/mocker/config/config.local.js",
+    "ignoreDirs": "/Users/lihaonan/github-project/mocker/config/config.local.js",
+    "fastReady": "/Users/lihaonan/github-project/mocker/node_modules/egg-development/config/config.default.js",
+    "reloadOnDebug": "/Users/lihaonan/github-project/mocker/node_modules/egg-development/config/config.default.js",
+    "overrideDefault": "/Users/lihaonan/github-project/mocker/node_modules/egg-development/config/config.default.js"
+  },
+  "logview": {
+    "dir": "/Users/lihaonan/github-project/mocker/config/config.local.js",
+    "prefix": "/Users/lihaonan/github-project/mocker/node_modules/egg-logview/config/config.default.js",
+    "staticHost": "/Users/lihaonan/github-project/mocker/node_modules/egg-logview/config/config.default.js"
+  },
+  "webpack": {
+    "browser": "/Users/lihaonan/github-project/mocker/config/config.local.js",
+    "port": "/Users/lihaonan/github-project/mocker/node_modules/egg-webpack/config/config.default.js",
+    "proxy": {
+      "host": "/Users/lihaonan/github-project/mocker/node_modules/egg-webpack/config/config.default.js",
+      "match": "/Users/lihaonan/github-project/mocker/node_modules/egg-webpack/config/config.default.js"
+    },
+    "webpackConfigList": "/Users/lihaonan/github-project/mocker/node_modules/egg-webpack/config/config.default.js"
+  },
+  "session": {
+    "maxAge": "/Users/lihaonan/github-project/mocker/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/lihaonan/github-project/mocker/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/lihaonan/github-project/mocker/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/lihaonan/github-project/mocker/node_modules/egg-session/config/config.default.js"
+  },
+  "helper": {
+    "shtml": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/lihaonan/github-project/mocker/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/Users/lihaonan/github-project/mocker/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/Users/lihaonan/github-project/mocker/node_modules/egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/lihaonan/github-project/mocker/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/lihaonan/github-project/mocker/node_modules/egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/lihaonan/github-project/mocker/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/Users/lihaonan/github-project/mocker/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/Users/lihaonan/github-project/mocker/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/Users/lihaonan/github-project/mocker/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/lihaonan/github-project/mocker/node_modules/egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/lihaonan/github-project/mocker/node_modules/egg-watcher/config/config.local.js",
+    "eventSources": {
+      "default": "/Users/lihaonan/github-project/mocker/node_modules/egg-watcher/config/config.default.js",
+      "development": "/Users/lihaonan/github-project/mocker/node_modules/egg-watcher/config/config.default.js"
+    }
+  },
+  "multipart": {
+    "autoFields": "/Users/lihaonan/github-project/mocker/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/lihaonan/github-project/mocker/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/lihaonan/github-project/mocker/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/lihaonan/github-project/mocker/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/Users/lihaonan/github-project/mocker/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/Users/lihaonan/github-project/mocker/node_modules/egg-multipart/config/config.default.js",
+    "files": "/Users/lihaonan/github-project/mocker/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/lihaonan/github-project/mocker/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/Users/lihaonan/github-project/mocker/node_modules/egg-multipart/config/config.default.js"
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/lihaonan/github-project/mocker/node_modules/egg-schedule/config/config.default.js",
+      "file": "/Users/lihaonan/github-project/mocker/node_modules/egg-schedule/config/config.default.js"
+    }
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/lihaonan/github-project/mocker/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/lihaonan/github-project/mocker/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/lihaonan/github-project/mocker/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/lihaonan/github-project/mocker/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/lihaonan/github-project/mocker/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/lihaonan/github-project/mocker/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/lihaonan/github-project/mocker/node_modules/egg-logrotator/config/config.default.js"
+  },
+  "serviceworker": {
+    "dir": "/Users/lihaonan/github-project/mocker/node_modules/egg-serviceworker/config/config.default.js",
+    "mapping": "/Users/lihaonan/github-project/mocker/node_modules/egg-serviceworker/config/config.default.js"
+  },
+  "cors": "/Users/lihaonan/github-project/mocker/node_modules/egg-cors/config/config.default.js",
+  "env": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+  "name": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+  "proxy": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "version": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "description": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "scripts": {
+      "debug": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "clean": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "build": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "build:dev": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "build:test": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "build:prod": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "dll": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "dev": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "start": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "kill": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "kill-mac": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "kill-win": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "restart": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "lint": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "fix": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "ii": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+    },
+    "dependencies": {
+      "axios": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "cross-env": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "egg": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "egg-cors": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "egg-logger": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "egg-serviceworker": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "egg-validate": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "egg-view-vue-ssr": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "element-ui": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "koa-bodyparser": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "lodash": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "moment": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "mongoose": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "service-worker-register": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "vue": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "vue-router": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "vuex": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "vuex-router-sync": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+    },
+    "devDependencies": {
+      "autod-egg": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "autoprefixer": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "babel-plugin-add-module-exports": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "babel-plugin-syntax-dynamic-import": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "babel-plugin-transform-object-assign": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "babel-plugin-transform-object-rest-spread": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "babel-plugin-transform-runtime": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "babel-preset-env": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "easywebpack-cli": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "easywebpack-vue": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "egg-bin": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "egg-logview": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "egg-webpack": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "egg-webpack-vue": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "eslint-config-egg": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "eslint-plugin-vue": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "imagemin-webpack-plugin": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "ip": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "less": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "less-loader": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "node-sass": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "sass-loader": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+    },
+    "ci": {
+      "version": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "url": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+    },
+    "author": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "license": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "homepage": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+  },
+  "baseDir": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+  "HOME": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+  "rundir": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "notFound": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "sitefile": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "middlewares": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "httpClient": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "formLimit": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "jsonLimit": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "strict": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "depth": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+    }
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxAge": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "logging": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "port": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "hostname": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+    "responseTimeout": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+  },
+  "onClientError": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js"
+}
