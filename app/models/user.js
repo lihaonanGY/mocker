@@ -4,19 +4,14 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-// const schema = new Schema({
-//   nick_name: String,
-//   head_img: String,
-//   name: String,
-//   password: String,
-//   create_at: {
-//     type: Date,
-//     default: Date.now
-//   }
-// })
 const schema = new Schema({
   username: String,
-  password: String
+  password: String,
+  nick_name: String,
+  create_at: {
+    type: Date,
+    default: Date.now
+  }
 })
 
 schema.index({ username: 1 }, { unique: true })

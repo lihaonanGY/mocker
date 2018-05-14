@@ -111,6 +111,7 @@
         "/Users/lihaonan/github-project/mocker/node_modules/egg-view/config/locales",
         "/Users/lihaonan/github-project/mocker/node_modules/egg-view-vue-ssr/config/locales",
         "/Users/lihaonan/github-project/mocker/node_modules/egg-serviceworker/config/locales",
+        "/Users/lihaonan/github-project/mocker/node_modules/egg-validate/config/locales",
         "/Users/lihaonan/github-project/mocker/node_modules/egg-cors/config/locales",
         "/Users/lihaonan/github-project/mocker/node_modules/egg-webpack/config/locales",
         "/Users/lihaonan/github-project/mocker/node_modules/egg-webpack-vue/config/locales",
@@ -262,6 +263,7 @@
       },
       "dependencies": {
         "axios": "^0.17.1",
+        "bcryptjs": "^2.4.3",
         "cross-env": "^5.0.0",
         "egg": "^2.1.0",
         "egg-cors": "^2.0.0",
@@ -604,6 +606,17 @@
       "env": [],
       "from": "/Users/lihaonan/github-project/mocker/config/plugin.js",
       "path": "/Users/lihaonan/github-project/mocker/node_modules/egg-serviceworker",
+      "version": "1.0.0"
+    },
+    "validate": {
+      "package": "egg-validate",
+      "enable": true,
+      "name": "validate",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/lihaonan/github-project/mocker/config/plugin.js",
+      "path": "/Users/lihaonan/github-project/mocker/node_modules/egg-validate",
       "version": "1.0.0"
     },
     "cors": {

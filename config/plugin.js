@@ -8,3 +8,6 @@ exports.serviceworker = {
   enable: true,
   package: 'egg-serviceworker'
 };
+exports.validate = {
+  package: 'egg-validate',
+};

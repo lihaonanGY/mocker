@@ -1,25 +1,46 @@
 const Model = require('../../models');
 const _ = require('lodash')
+const BaseController = require('../base_controller');
+const bcrypt = require('bcryptjs');
+const tp = require('../../util/toPromise')
 module.exports = app => {
 
-  return class RegisterController extends app.Controller {
+  return class RegisterController extends BaseController {
     async index() {
       const { ctx } = this;
       await ctx.render('register/register.js');
     }
     async register() {
       const { ctx } = this
-      const user = await userProxy.getByName(name)
+      try {
+        ctx.validate({
+          username: { type: 'string' },
+          nick_name: { type: 'string' },
+          password: {
+            type: 'string',
+            min: 6,
+            max: 40
+          }
+        });
+      } catch (err) {
+        ctx.logger.warn(err.errors);
+        this.faild(`${err.errors[0].field}:${err.errors[0].message}`)
+        return;
+      }
+
+      const user = await Model.User.findOne({ username: ctx.request.body.username })
       if (!_.isEmpty(user)) {
-        this.body = this.util.refail('注册失败，该用户已存在')
+        this.faild('注册失败，该用户已存在')
         return
       }
+      // 将密码散列加盐存储
+      const bcryptPassword = await tp(bcrypt.hash, ctx.request.body.password, 8)
       const res = await Model.User.create({
         username: ctx.request.body.username,
-        password: ctx.request.body.password
+        nick_name: ctx.request.body.nick_name,
+        password: bcryptPassword
       })
-      ctx.body = res
-      ctx.status = 201
+      this.success(res, 201)
     }
   };
 };
