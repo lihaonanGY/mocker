@@ -40,6 +40,7 @@
   @import "index.css";
 </style>
 <script type="text/babel">
+  import lsData from '../../../util/local-data'
   export default {
     components: {
 
@@ -82,10 +83,9 @@
       }
     },
     mounted() {
-      // import('service-worker-register').then(sw =>{
-      //   console.log(sw);
-      //   sw.default.register('service-worker.js');
-      // });
+      if (!lsData.get('token')) {
+        window.location.href = '/login'
+      }
       window.addEventListener('scroll', ()=>{
         this.loadPage();
       }, false);

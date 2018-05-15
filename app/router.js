@@ -11,6 +11,7 @@ module.exports = app => {
   app.get('/sass', app.controller.css.css.sass);
 
   // api
+  // app.post('/api/register', app.jwt, app.controller.user.user.register);
   app.post('/api/register', app.controller.user.user.register);
   app.post('/api/login', app.controller.user.user.login);
 };

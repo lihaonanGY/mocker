@@ -38,5 +38,9 @@ module.exports = app => {
     csrf: { enable: false }
   }
 
+  exports.jwt = {
+    secret: '123456'
+  }
+
   return exports;
 };

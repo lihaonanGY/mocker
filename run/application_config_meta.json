@@ -112,6 +112,10 @@
       "checkAddress": "/Users/lihaonan/github-project/mocker/node_modules/egg-security/config/config.default.js"
     }
   },
+  "jwt": {
+    "secret": "/Users/lihaonan/github-project/mocker/config/config.default.js",
+    "enable": "/Users/lihaonan/github-project/mocker/node_modules/egg-jwt/config/config.default.js"
+  },
   "development": {
     "watchDirs": "/Users/lihaonan/github-project/mocker/config/config.local.js",
     "ignoreDirs": "/Users/lihaonan/github-project/mocker/config/config.local.js",
@@ -230,6 +234,7 @@
       "cross-env": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "egg": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "egg-cors": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "egg-jwt": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "egg-logger": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "egg-serviceworker": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "egg-validate": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",

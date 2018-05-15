@@ -178,6 +178,10 @@
       "dir": "/Users/lihaonan/github-project/mocker/public",
       "mapping": "/Users/lihaonan/github-project/mocker/public/sw-mapping.json"
     },
+    "jwt": {
+      "secret": "<String len: 6>",
+      "enable": false
+    },
     "cors": {},
     "webpack": {
       "port": 9000,
@@ -228,6 +232,7 @@
         "cross-env": "^5.0.0",
         "egg": "^2.1.0",
         "egg-cors": "^2.0.0",
+        "egg-jwt": "^3.0.0",
         "egg-logger": "^1.5.0",
         "egg-serviceworker": "^1.0.0",
         "egg-validate": "^1.0.0",
@@ -559,6 +564,19 @@
       "from": "/Users/lihaonan/github-project/mocker/config/plugin.js",
       "path": "/Users/lihaonan/github-project/mocker/node_modules/egg-validate",
       "version": "1.0.0"
+    },
+    "jwt": {
+      "enable": true,
+      "package": "egg-jwt",
+      "name": "jwt",
+      "dependencies": [],
+      "optionalDependencies": [
+        "onerror"
+      ],
+      "env": [],
+      "from": "/Users/lihaonan/github-project/mocker/config/plugin.js",
+      "path": "/Users/lihaonan/github-project/mocker/node_modules/egg-jwt",
+      "version": "3.0.0"
     },
     "cors": {
       "enable": true,

@@ -1,7 +1,10 @@
 <template>
   <layout>
     <div class="login-frame">
-      <h1>注册</h1>
+      <div class="head">
+        <h1>注册</h1>
+        <span @click="jumpLogin">前往登录</span>
+      </div>
       <el-form :model="form" :rules="formRules" ref="form" label-width="85px" class="ruleForm">
         <el-form-item label="用户名" prop="username">
           <el-input placeholder="请输入用户名" v-model="form.username"></el-input>
@@ -72,13 +75,17 @@
       register (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            this.$http.post(`${location.origin}/api/register`, {
-              username: this.form.username,
-              password: this.form.password,
-              nick_name: this.form.nickName
+            this.$fetch({
+              method: 'post',
+              url: `${location.origin}/api/register`,
+              data: {
+                username: this.form.username,
+                password: this.form.password,
+                nick_name: this.form.nickName
+              }
             })
             .then(res=> {
-              console.log(res)
+              window.location.href = "/login"
             })
           } else {
             this.$notify({
@@ -88,6 +95,9 @@
             return false;
           }
         });
+      },
+      jumpLogin () {
+        window.location.href = "/login"
       }
     },
     mounted() {
@@ -107,6 +117,18 @@
     background: -webkit-gradient(linear, 0% 20%, 0% 100%, from(#fff), to(#fff), color-stop(.2, #f2f2f2));
     border: 1px solid #ccc;
     -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        text-decoration: underline;
+        color: gray;
+        padding: 3px 5px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+    }
     .ruleForm {
       display: flex;
       flex-direction: column;

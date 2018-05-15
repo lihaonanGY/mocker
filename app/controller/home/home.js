@@ -6,7 +6,7 @@ module.exports = app => {
 
     async index() {
       const { ctx } = this;
-      await ctx.render('index/index.js', Model.getPage(1, 10));
+      await ctx.renderClient('index/index.js', Model.getPage(1, 10));
     }
 
     async client() {

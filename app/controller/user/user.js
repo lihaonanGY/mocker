@@ -8,11 +8,11 @@ module.exports = app => {
   return class RegisterController extends BaseController {
     async registerWeb() {
       const { ctx } = this;
-      await ctx.render('register/register.js');
+      await ctx.renderClient('register/register.js');
     }
     async loginWeb() {
       const { ctx } = this;
-      await ctx.render('login/login.js');
+      await ctx.renderClient('login/login.js');
     }
     async register() {
       const { ctx } = this
@@ -60,7 +60,13 @@ module.exports = app => {
         this.faild('请检查密码是否正确')
         return
       }
-      this.success('登录成功', 201)
+      const token = app.jwt.sign({ foo: 'bar' }, app.config.jwt.secret);
+      this.success({
+        token,
+        nick_name: user.nick_name,
+        id: user._id,
+        message: '登录成功'
+      }, 201)
     }
   };
 };

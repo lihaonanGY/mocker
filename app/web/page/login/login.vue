@@ -1,7 +1,10 @@
 <template>
   <layout>
     <div class="login-frame">
-      <h1>登录</h1>
+      <div class="head">
+        <h1>登录</h1>
+        <span @click="jumpRegister">前往注册</span>
+      </div>
       <el-form :model="form" :rules="formRules" ref="form" label-width="0px" class="ruleForm">
         <el-form-item  prop="username">
           <el-input placeholder="请输入用户名" v-model="form.username"></el-input>
@@ -15,6 +18,7 @@
   </layout>
 </template>
 <script type="text/babel">
+import lsData from '../../../util/local-data'
   export default {
     data () {
       return {
@@ -46,7 +50,12 @@
               password: this.form.password
             })
             .then(res=> {
-              console.log(res)
+              if (res.data.success) {
+                lsData.set('token', res.data.data.token)
+                lsData.set('nickName', res.data.data.nick_name)
+                lsData.set('userId', res.data.data.id)
+                window.location.href='/';
+              }
             })
           } else {
             this.$notify({
@@ -56,6 +65,9 @@
             return false;
           }
         });
+      },
+      jumpRegister () {
+        window.location.href = "/register"
       }
     },
     mounted() {
@@ -75,6 +87,18 @@
     background: -webkit-gradient(linear, 0% 20%, 0% 100%, from(#fff), to(#fff), color-stop(.2, #f2f2f2));
     border: 1px solid #ccc;
     -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        text-decoration: underline;
+        color: gray;
+        padding: 3px 5px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+    }
     .ruleForm {
       display: flex;
       flex-direction: column;

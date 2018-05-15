@@ -11,3 +11,7 @@ exports.serviceworker = {
 exports.validate = {
   package: 'egg-validate',
 };
+exports.jwt = {
+  enable: true,
+  package: 'egg-jwt'
+};
