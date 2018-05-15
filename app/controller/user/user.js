@@ -6,9 +6,13 @@ const tp = require('../../util/toPromise')
 module.exports = app => {
 
   return class RegisterController extends BaseController {
-    async index() {
+    async registerWeb() {
       const { ctx } = this;
       await ctx.render('register/register.js');
+    }
+    async loginWeb() {
+      const { ctx } = this;
+      await ctx.render('login/login.js');
     }
     async register() {
       const { ctx } = this
@@ -41,6 +45,22 @@ module.exports = app => {
         password: bcryptPassword
       })
       this.success(res, 201)
+    }
+    async login() {
+      const { ctx } = this
+
+      const user = await Model.User.findOne({ username: ctx.request.body.username })
+      if (_.isEmpty(user)) {
+        this.faild('登录失败，该用户不存在')
+        return
+      }
+      // 对比字符串与经过加密的字符串是否相同
+      const verifyPassword = await tp(bcrypt.compare, ctx.request.body.password, user.password)
+      if (!verifyPassword) {
+        this.faild('请检查密码是否正确')
+        return
+      }
+      this.success('登录成功', 201)
     }
   };
 };

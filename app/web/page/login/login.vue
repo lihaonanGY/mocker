@@ -1,24 +1,15 @@
 <template>
   <layout>
     <div class="login-frame">
-      <h1>注册</h1>
-      <el-form :model="form" :rules="formRules" ref="form" label-width="85px" class="ruleForm">
-        <el-form-item label="用户名" prop="username">
+      <h1>登录</h1>
+      <el-form :model="form" :rules="formRules" ref="form" label-width="0px" class="ruleForm">
+        <el-form-item  prop="username">
           <el-input placeholder="请输入用户名" v-model="form.username"></el-input>
         </el-form-item>
-        <el-form-item label="昵称" prop="nickName">
-          <el-input placeholder="请输入昵称" v-model="form.nickName"></el-input>
-        </el-form-item>
-        <el-form-item label="密码" prop="password">
+        <el-form-item prop="password">
           <el-input type="password" v-model="form.password" auto-complete="off" placeholder="请输入密码"></el-input>
         </el-form-item>
-        <el-form-item label="确认密码" prop="passwordAgain">
-          <el-input type="password" v-model="form.passwordAgain" auto-complete="off" placeholder="请再次输入密码"></el-input>
-        </el-form-item>
-        <div class="btn-group">
-          <el-button type="primary" @click="register('form')">提交</el-button>
-          <el-button @click="resetForm('form')">重置</el-button>
-        </div>
+        <el-button type="primary" @click="login('form')">提交</el-button>
       </el-form>
     </div>
   </layout>
@@ -26,39 +17,17 @@
 <script type="text/babel">
   export default {
     data () {
-      var validatePassAgain = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('请再次输入密码'));
-        } else if (value !== this.data.form.password) {
-          callback(new Error('两次输入密码不一致!'));
-        } else {
-          callback();
-        }
-      }
       return {
         form: {
           username: '',
-          password: '',
-          nickName: '',
-          passwordAgain: ''
+          password: ''
         },
         formRules: {
           username: [
-            { required: true, message: '请输入用户名', trigger: 'blur' },
-            { max: 20, message: '不得大于20个字符', trigger: 'blur' }
-          ],
-          nickName: [
-            { required: true, message: '请输入昵称', trigger: 'blur' },
-            { max: 20, message: '不得大于20个字符', trigger: 'blur' }
+            { required: true, message: '请输入用户名', trigger: 'blur' }
           ],
           password: [
-            { required: true, message: '请输入密码', trigger: 'blur' },
-            { min: 6, message: '不得小于6个字符', trigger: 'blur' },
-            { max: 40, message: '不得大于40个字符', trigger: 'blur' }
-          ],
-          passwordAgain: [
-            { required: true, message: '请再次输入密码', trigger: 'blur' },
-            { validator: validatePassAgain, trigger: 'change' }
+            { required: true, message: '请输入密码', trigger: 'blur' }
           ]
         }
       }
@@ -69,13 +38,12 @@
       resetForm(formName) {
         this.$refs[formName].resetFields();
       },
-      register (formName) {
+      login (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            this.$http.post(`${location.origin}/api/register`, {
+            this.$http.post(`${location.origin}/api/login`, {
               username: this.form.username,
-              password: this.form.password,
-              nick_name: this.form.nickName
+              password: this.form.password
             })
             .then(res=> {
               console.log(res)
@@ -114,9 +82,6 @@
         display: flex;
         justify-content: center;
       }
-    }
-    .password, .username, .nickName {
-      margin-bottom: 20px;
     }
     h1{
       font-family: 'Open Sans', sans-serif;

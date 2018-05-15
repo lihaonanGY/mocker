@@ -28,11 +28,12 @@
   {
     "name": null,
     "methods": [
-      "POST"
+      "HEAD",
+      "GET"
     ],
     "paramNames": [],
-    "path": "/api/register",
-    "regexp": "/^\\/api\\/register(?:\\/(?=$))?$/",
+    "path": "/login",
+    "regexp": "/^\\/login(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]
@@ -120,6 +121,30 @@
     "paramNames": [],
     "path": "/sass",
     "regexp": "/^\\/sass(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/register",
+    "regexp": "/^\\/api\\/register(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/login",
+    "regexp": "/^\\/api\\/login(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]

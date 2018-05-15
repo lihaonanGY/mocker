@@ -2,6 +2,7 @@
   "app/app.js": "/public/js/app/app.js",
   "css/module/module.js": "/public/js/css/module/module.js",
   "index/index.js": "/public/js/index/index.js",
+  "login/login.js": "/public/js/login/login.js",
   "register/register.js": "/public/js/register/register.js",
   "sass/sass.js": "/public/js/sass/sass.js",
   "js/chunk/0.js": "/public/js/chunk/0.js",
@@ -31,6 +32,13 @@
       "js": [
         "/public/js/vendor.js",
         "/public/js/index/index.js"
+      ],
+      "css": []
+    },
+    "login/login.js": {
+      "js": [
+        "/public/js/vendor.js",
+        "/public/js/login/login.js"
       ],
       "css": []
     },
