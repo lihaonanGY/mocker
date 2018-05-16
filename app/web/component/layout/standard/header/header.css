@@ -20,7 +20,13 @@
 .header .nav:after {
   clear: both
 }
-
+.header .usercenter {
+  float: right;
+  font-size: 15px;
+}
+.header .usercenter .user-name {
+  font-size: 13px;
+}
 
 .header .container {
   height: 100%;
@@ -56,7 +62,7 @@
 }
 
 .header .nav {
-  float: right;
+  float: left;
   height: 100%;
   line-height: 80px;
   background: transparent;

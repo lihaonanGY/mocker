@@ -15,3 +15,4 @@ mongoose.connect('mongodb://localhost:27017/mocker', {
 })
 
 exports.User = require('./user')
+exports.Project = require('./project')

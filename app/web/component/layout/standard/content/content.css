@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .page-container{
-  padding: 0 30px;
+  /* padding: 0 30px; */
   margin: 36 auto;
 }
 .page-component {

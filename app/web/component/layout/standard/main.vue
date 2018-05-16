@@ -11,12 +11,26 @@
 <style lang="css">
   body {
     margin: 0 0px;
+    background: #f5f7fa;
   }
-
   a {
     text-decoration: none;
   }
-
+@font-face {
+  font-family: 'iconfont';  /* project id 668187 */
+  src: url('//at.alicdn.com/t/font_668187_cc5tfbmw53vdkj4i.eot');
+  src: url('//at.alicdn.com/t/font_668187_cc5tfbmw53vdkj4i.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_668187_cc5tfbmw53vdkj4i.woff') format('woff'),
+  url('//at.alicdn.com/t/font_668187_cc5tfbmw53vdkj4i.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_668187_cc5tfbmw53vdkj4i.svg#iconfont') format('svg');
+}
+  .iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+  }
   @import "../../../asset/css/global.css";
 </style>
 <script type="text/babel">
