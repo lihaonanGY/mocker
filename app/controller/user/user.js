@@ -68,5 +68,16 @@ module.exports = app => {
         message: '登录成功'
       }, 201)
     }
+    async getUsers() {
+      const { ctx } = this
+      if (ctx.query.q === '') {
+        const users = await Model.User.find().sort({ _id: -1 }).exec()
+        this.success(users, 200)
+      } else {
+        const reg = eval(`/${ctx.query.q}/`);
+        const users = await Model.User.find({ username: reg })
+        this.success(users, 200)
+      }
+    }
   };
 };

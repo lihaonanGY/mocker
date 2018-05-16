@@ -3,15 +3,14 @@ module.exports = app => {
   app.get('/', app.controller.home.home.index);
   app.get('/register', app.controller.user.user.registerWeb);
   app.get('/login', app.controller.user.user.loginWeb);
-
-  app.get('/app/api/article/list', app.controller.app.app.list);
-  app.get('/app/api/article/:id', app.controller.app.app.detail);
-  app.get('/app(/.+)?', app.controller.app.app.index);
-  app.get('/css/module', app.controller.css.css.module);
-  app.get('/sass', app.controller.css.css.sass);
+  app.get('/addproject', app.controller.project.project.addProjectWeb);
 
   // api
-  // app.post('/api/register', app.jwt, app.controller.user.user.register);
+  // 用户相关
   app.post('/api/register', app.controller.user.user.register);
   app.post('/api/login', app.controller.user.user.login);
+  app.get('/api/get_users', app.jwt, app.controller.user.user.getUsers)
+  // 项目相关
+  app.post('/api/create_project', app.jwt, app.controller.project.project.addProject)
+  app.get('/api/get_projects', app.jwt, app.controller.project.project.getProjects)
 };

@@ -45,82 +45,8 @@
       "GET"
     ],
     "paramNames": [],
-    "path": "/app/api/article/list",
-    "regexp": "/^\\/app\\/api\\/article\\/list(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [
-      {
-        "name": "id",
-        "prefix": "/",
-        "delimiter": "/",
-        "optional": false,
-        "repeat": false,
-        "partial": false,
-        "asterisk": false,
-        "pattern": "[^\\/]+?"
-      }
-    ],
-    "path": "/app/api/article/:id",
-    "regexp": "/^\\/app\\/api\\/article\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [
-      {
-        "name": 0,
-        "prefix": "",
-        "delimiter": "/",
-        "optional": true,
-        "repeat": false,
-        "partial": false,
-        "asterisk": false,
-        "pattern": "\\/.+"
-      }
-    ],
-    "path": "/app(/.+)?",
-    "regexp": "/^\\/app(?:((?:\\/.+)))?(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/css/module",
-    "regexp": "/^\\/css\\/module(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/sass",
-    "regexp": "/^\\/sass(?:\\/(?=$))?$/",
+    "path": "/addproject",
+    "regexp": "/^\\/addproject(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]
@@ -146,6 +72,47 @@
     "path": "/api/login",
     "regexp": "/^\\/api\\/login(?:\\/(?=$))?$/",
     "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/get_users",
+    "regexp": "/^\\/api\\/get_users(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/create_project",
+    "regexp": "/^\\/api\\/create_project(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/get_projects",
+    "regexp": "/^\\/api\\/get_projects(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
       "wrappedController"
     ]
   }
