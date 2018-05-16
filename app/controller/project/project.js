@@ -9,6 +9,10 @@ module.exports = app => {
       const { ctx } = this;
       await ctx.renderClient('addProject/addProject.js');
     }
+    async updateProjectWeb() {
+      const { ctx } = this;
+      await ctx.renderClient('updateProject/updateProject.js');
+    }
     async addProject() {
       const { ctx } = this
       try {
@@ -40,7 +44,7 @@ module.exports = app => {
             return
           }
           if (_.toString(user._id) !== ctx.request.body.create_user) {
-            members.push(user._id)
+            members.push(user)
           }
         }
         reqProject.members = members
@@ -70,6 +74,22 @@ module.exports = app => {
       }
       const reqProject = ctx.request.body
       const id = ctx.params.id
+      if (!ctx.request.body.is_public) {
+        const members = []
+        for (let i = 0; i < ctx.request.body.members.length; i++) {
+          const user = await Model.User.findOne({ username: ctx.request.body.members[i] })
+          if (_.isEmpty(user)) {
+            this.faild('创建失败，找不到该用户' + ctx.request.body.members[i])
+            return
+          }
+          if (_.toString(user._id) !== ctx.request.body.create_user) {
+            members.push(user)
+          }
+        }
+        reqProject.members = members
+      } else {
+        reqProject.members = []
+      }
       const res = await Model.Project.findByIdAndUpdate(id, reqProject)
       if (_.isEmpty(res)) {
         this.faild('更新失败，未找到该项目')
@@ -118,6 +138,9 @@ module.exports = app => {
         this.success(project, 200)
       } else if (type === 4) {
         const project = await Model.Project.find({ is_public: false }).sort({ _id: -1 })
+        this.success(project, 200)
+      } else if (ctx.query.projectId) {
+        const project = await Model.Project.findById(ctx.query.projectId)
         this.success(project, 200)
       }
     }

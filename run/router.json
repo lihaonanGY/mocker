@@ -54,6 +54,19 @@
   {
     "name": null,
     "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/updateproject",
+    "regexp": "/^\\/updateproject(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
       "POST"
     ],
     "paramNames": [],
@@ -111,6 +124,43 @@
     "paramNames": [],
     "path": "/api/get_projects",
     "regexp": "/^\\/api\\/get_projects(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/delete_project",
+    "regexp": "/^\\/api\\/delete_project(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "PUT"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/update_project/:id",
+    "regexp": "/^\\/api\\/update_project\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
     "stack": [
       "middleware",
       "wrappedController"

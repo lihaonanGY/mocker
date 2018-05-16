@@ -27,10 +27,10 @@
         <el-tag type="info">{{project.is_public ? '公有项目' : '私有项目'}}</el-tag>
         <el-tag type="warning">创建者：{{project.create_user.nick_name}}</el-tag>
         <div class="btn-group">
-          <el-button type="primary" icon="el-icon-edit" circle></el-button>
+          <el-button type="primary" icon="el-icon-edit" circle @click="jumpUpdateProject(project)"></el-button>
           <el-button type="warning" icon="el-icon-star-off" circle></el-button>
           <el-button icon="el-icon-star-off" circle></el-button>
-          <el-button type="danger" icon="el-icon-delete" circle></el-button>
+          <el-button type="danger" icon="el-icon-delete" circle @click="delProject(project)"></el-button>
         </div>
       </div>
     </div>
@@ -61,6 +61,26 @@
             this.projectList = res.data.data
           }
         })
+      },
+      delProject (project) {
+        this.$fetch({
+          method: 'post',
+          url: `${location.origin}/api/delete_project`,
+          data: { id: project._id }
+        })
+        .then(res=> {
+          if (res.data.success) {
+            this.type = '全部'
+            this.loadProject(1)
+            this.$notify({
+              message: res.data.data,
+              type: 'success'
+            })
+          }
+        })
+      },
+      jumpUpdateProject (project) {
+        window.location.href = `/updateproject?projectId=${project._id}`
       },
       jumpAddProject () {
         window.location.href = '/addproject'

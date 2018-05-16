@@ -8,7 +8,7 @@
         <li class="nav-item"><a href="/dynamic" :class="{'active' : selectedMenu === '/dynamic'}">Vue-Component-Dynamic</a></li> -->
       </ul>
       <div class="usercenter">
-        <span class="user-name">精致的猪猪女孩</span>
+        <span class="user-name">{{userNickName}}</span>
         <el-button type="info" icon="el-icon-setting" circle plain></el-button>
       </div>
     </div>
@@ -18,6 +18,7 @@
   @import "./header.css";
 </style>
 <script type="text/babel">
+  import lsData from '../../../../../util/local-data'
   export default{
     data(){
       return {
@@ -25,6 +26,9 @@
       }
     },
     computed:{
+      userNickName () {
+        return lsData.get('nickName')
+      }
     },
     mounted(){
       this.selectedMenu = window.location.pathname.toLowerCase();

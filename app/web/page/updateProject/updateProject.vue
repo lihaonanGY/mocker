@@ -3,10 +3,10 @@
     <div class="head">
       <div class="head-content">
         <div class="head-left">
-          <i class="iconfont">&#xe63e;</i>
+          <i class="iconfont">&#xe62d;</i>
           <div class="font-info">
-            <h2>创建项目</h2>
-            <span class="title">让模仿者创建一个项目来帮助你开发吧</span>
+            <h2>修改项目</h2>
+            <span class="title">可以在这里管理你的项目基本信息哟～～～</span>
           </div>
         </div>
         <div class="btn-group">
@@ -37,7 +37,7 @@
           <el-button type="primary" icon="el-icon-plus" circle @click="addMember"></el-button>
         </el-form-item>
         <div class="btn-group">
-          <el-button type="primary" @click="create('form')">创建</el-button>
+          <el-button type="primary" @click="update('form')">更新</el-button>
         </div>
       </el-form>
     </div>
@@ -55,6 +55,7 @@ import _ from 'lodash'
           isPublic: ''
         },
         members: [{ username: '' }],
+        projectId: '',
         formRules: {
           projectName: [
             { required: true, message: '请输入项目名称', trigger: 'blur' }
@@ -71,7 +72,7 @@ import _ from 'lodash'
     components: {},
     computed: {},
     methods: {
-      create (formName) {
+      update (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
             const members = this.members.map(item => {
@@ -86,11 +87,10 @@ import _ from 'lodash'
               return false
             }
             this.$fetch({
-              method: 'post',
-              url: `${location.origin}/api/create_project`,
+              method: 'put',
+              url: `${location.origin}/api/update_project/${this.projectId}`,
               data: {
                 name: this.form.projectName,
-                create_user: lsData.get('userId'),
                 description: this.form.description,
                 is_public: this.form.isPublic,
                 members: members
@@ -128,10 +128,29 @@ import _ from 'lodash'
       },
       addMember () {
         this.members.push({ user: '' })
+      },
+      loadProject (projectId) {
+        this.$fetch({
+          method: 'get',
+          url: `${location.origin}/api/get_projects?projectId=${projectId}`
+        })
+        .then(res=> {
+          if (res.data.success) {
+            let data = res.data.data
+            console.log(data)
+            this.form.projectName = data.name
+            this.form.description = data.description
+            this.form.isPublic = data.is_public
+            this.members = data.members.map(item => {
+              return { username: item.username }
+            })
+          }
+        })
       }
     },
     mounted() {
-
+      this.projectId = this.$getQuery('projectId')
+      this.loadProject(this.projectId)
     }
   }
 </script>

@@ -3,6 +3,7 @@
   "index/index.js": "/public/js/index/index.js",
   "login/login.js": "/public/js/login/login.js",
   "register/register.js": "/public/js/register/register.js",
+  "updateProject/updateProject.js": "/public/js/updateProject/updateProject.js",
   "img/bg.jpg": "/public/img/bg.jpg",
   "font/element-icons.ttf": "/public/font/element-icons.ttf",
   "font/element-icons.woff": "/public/font/element-icons.woff",
@@ -34,6 +35,13 @@
       "js": [
         "/public/js/vendor.js",
         "/public/js/register/register.js"
+      ],
+      "css": []
+    },
+    "updateProject/updateProject.js": {
+      "js": [
+        "/public/js/vendor.js",
+        "/public/js/updateProject/updateProject.js"
       ],
       "css": []
     }
