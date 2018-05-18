@@ -12,11 +12,33 @@
         <div class="btn-group">
           <el-button icon="el-icon-refresh" size="small" @click="update()">更新</el-button>
           <el-button icon="el-icon-view" size="small">测试</el-button>
-          <el-button icon="el-icon-upload2" size="small">保存并返回</el-button>
+          <el-button icon="el-icon-upload2" size="small" @click="create">保存并返回</el-button>
         </div>
       </div>
     </div>
     <div class="container">
+      <h3>Method</h3>
+      <el-select v-model="methodVal" placeholder="请选择">
+        <el-option
+          v-for="item in methods"
+          :key="item"
+          :label="item"
+          :value="item">
+        </el-option>
+      </el-select>
+      <h3>url</h3>
+        <el-input
+          placeholder="请输入接口url"
+          v-model="url"
+          clearable>
+        </el-input>
+      <h3>description</h3>
+        <el-input
+          placeholder="请输入接口的相关描述"
+          v-model="description"
+          clearable>
+        </el-input>
+      <h3>response data</h3>
       <el-tree
         :data="data"
         node-key="id"
@@ -262,12 +284,45 @@
             valueRes: [],
             children: []
           }]
-        }]
+        }],
+        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+        methodVal: 'GET',
+        url: '',
+        description: ''
       }
     },
     computed: {
     },
     methods: {
+      create () {
+        // this.formCheck()
+        // if (uniqMembers.length !== members.length) {
+        //   this.$notify({
+        //     message: '团队成员中有重复的成员，请修改',
+        //     type: 'warning'
+        //   })
+        //   return false
+        // }
+        const data = {
+          project: this.projectId,
+          description: this.description,
+          url: this.url,
+          method: this.methodVal,
+          response_mock: this.toMockJs(),
+          response_api_tree: this.data
+        }
+        this.$fetch({
+          method: 'post',
+          url: `${location.origin}/api/create_api`,
+          data: data
+        })
+        .then(res=> {
+          console.log(res)
+          if (res.data.success) {
+            console.log(666)
+          }
+        })
+      },
       loadProject (projectId) {
         this.$fetch({
           method: 'get',
@@ -298,6 +353,7 @@
         let obj = {}
         this.childrenToMockJs(obj, this.data[0].children, 'Object')
         console.log('最终结果', obj)
+        return obj
       },
       // 待解决问题
       // 1. 指定数字的时候实际上是一个字符串
@@ -315,11 +371,7 @@
           } else if (children[0].valueRes[1] === 'ruleNumber') {
             obj.push(`@float(${children[0].valueRes[2]})`)
           } else {
-            if ( typeOrMock === '/^1[0-9]{10}$/') {
-              obj.push(eval(typeOrMock))
-            } else {
-              obj.push(typeOrMock)
-            }
+            obj.push(typeOrMock)
           }
         } else {
           children.forEach(item => {
@@ -332,9 +384,7 @@
               if (item['children'].length === 0) return
               this.childrenToMockJs(obj[newKey], item['children'], 'Array')
             } else {
-              if ( item.valueRes[item.valueRes.length - 1] === '/^1[0-9]{10}$/') {
-                obj[item['key']] = eval(item.valueRes[item.valueRes.length - 1])
-              } else if (item.valueRes[1] === 'ruleNumber') {
+              if (item.valueRes[1] === 'ruleNumber') {
                 obj[item['key']] = `@float(${item.valueRes[2]})`
               } else {
                 obj[item['key']] = item.valueRes[item.valueRes.length - 1]
@@ -413,7 +463,17 @@
   }
 }
 .container {
-  padding-top: 30px;
+  margin-top: 30px;
+  background: #fff;
+  h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    height: 30px;
+    line-height: 30px;
+    border-left: 5px solid #568ef8;
+    padding-left: 10px;
+    font-weight: 700;
+  }
   .custom-tree-node {
     flex: 1;
     display: flex;
@@ -440,7 +500,7 @@
   display: flex;
 }
 .el-tree-node__content:hover {
-  background-color: #edf7fe;
+  background-color: #fff;
 }
 .el-tree-node:focus>.el-tree-node__content {
   background-color: #fff;

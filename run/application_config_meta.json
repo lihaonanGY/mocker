@@ -242,6 +242,7 @@
       "element-ui": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "koa-bodyparser": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "lodash": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "mockjs": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "moment": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "mongoose": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "service-worker-register": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
