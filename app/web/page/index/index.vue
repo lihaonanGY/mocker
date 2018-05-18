@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="project-item" v-for="project in projectList" :key="project._id">
+      <div class="project-item" v-for="project in projectList" :key="project._id" @click="jumpApiList($event, project)">
         <h3><i class="iconfont">&#xe607;</i>{{project.name}}</h3>
         <el-tag>{{project.description}}</el-tag>
         <el-tag type="info">{{project.is_public ? '公有项目' : '私有项目'}}</el-tag>
@@ -84,6 +84,12 @@
       },
       jumpAddProject () {
         window.location.href = '/addproject'
+      },
+      jumpApiList (e, project) {
+        if (e.target.className.indexOf('el-button') !== -1 || e.target.className.indexOf('el-icon-edit') !== -1 || e.target.className.indexOf('el-icon-delete') !== -1) {
+          return
+        }
+        window.location.href = `/apilist?projectId=${project._id}`
       }
     },
     mounted() {

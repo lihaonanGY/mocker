@@ -5,6 +5,8 @@ module.exports = app => {
   app.get('/login', app.controller.user.user.loginWeb);
   app.get('/addproject', app.controller.project.project.addProjectWeb);
   app.get('/updateproject', app.controller.project.project.updateProjectWeb);
+  app.get('/apilist', app.controller.api.api.apiListWeb);
+  app.get('/createupdateapi', app.controller.api.api.createUpdateWeb);
 
   // api
   // 用户相关

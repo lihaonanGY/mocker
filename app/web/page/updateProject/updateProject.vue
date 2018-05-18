@@ -137,7 +137,6 @@ import _ from 'lodash'
         .then(res=> {
           if (res.data.success) {
             let data = res.data.data
-            console.log(data)
             this.form.projectName = data.name
             this.form.description = data.description
             this.form.isPublic = data.is_public

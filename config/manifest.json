@@ -1,12 +1,14 @@
 {
   "addProject/addProject.js": "/public/js/addProject/addProject.js",
+  "apiList/apiList.js": "/public/js/apiList/apiList.js",
+  "createUpdateApi/createUpdateApi.js": "/public/js/createUpdateApi/createUpdateApi.js",
   "index/index.js": "/public/js/index/index.js",
   "login/login.js": "/public/js/login/login.js",
   "register/register.js": "/public/js/register/register.js",
   "updateProject/updateProject.js": "/public/js/updateProject/updateProject.js",
   "img/bg.jpg": "/public/img/bg.jpg",
-  "font/element-icons.ttf": "/public/font/element-icons.ttf",
   "font/element-icons.woff": "/public/font/element-icons.woff",
+  "font/element-icons.ttf": "/public/font/element-icons.ttf",
   "js/vendor.js": "/public/js/vendor.js",
   "vendor.js": "/public/js/vendor.js",
   "deps": {
@@ -14,6 +16,20 @@
       "js": [
         "/public/js/vendor.js",
         "/public/js/addProject/addProject.js"
+      ],
+      "css": []
+    },
+    "apiList/apiList.js": {
+      "js": [
+        "/public/js/vendor.js",
+        "/public/js/apiList/apiList.js"
+      ],
+      "css": []
+    },
+    "createUpdateApi/createUpdateApi.js": {
+      "js": [
+        "/public/js/vendor.js",
+        "/public/js/createUpdateApi/createUpdateApi.js"
       ],
       "css": []
     },
