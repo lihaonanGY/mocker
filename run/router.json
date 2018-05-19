@@ -209,6 +209,57 @@
     "name": null,
     "methods": [
       "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/get_api",
+    "regexp": "/^\\/api\\/get_api(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "PUT"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/update_api/:id",
+    "regexp": "/^\\/api\\/update_api\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/delete_api",
+    "regexp": "/^\\/api\\/delete_api(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "HEAD",
       "ACL",
       "BIND",
       "CHECKOUT",

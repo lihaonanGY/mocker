@@ -20,6 +20,9 @@ module.exports = app => {
   app.put('/api/update_project/:id', app.jwt, app.controller.project.project.updateProject)
   // api相关
   app.post('/api/create_api', app.jwt, app.controller.api.api.addApi)
+  app.get('/api/get_api', app.jwt, app.controller.api.api.getApi)
+  app.put('/api/update_api/:id', app.jwt, app.controller.api.api.updateApi)
+  app.post('/api/delete_api', app.jwt, app.controller.api.api.deleteApi)
   // mock 相关
   app.all('/api/mock/*', app.controller.api.api.mock)
 };

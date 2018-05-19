@@ -104,97 +104,87 @@ module.exports = app => {
         return
       }
       const resData = Mockjs.mock(api.response_mock)
-      this.success(resData, 200)
+      this.ctx.body = resData
+      this.ctx.status = 200
     }
-    // async updateProject() {
-    //   const { ctx } = this
-    //   try {
-    //     ctx.validate({
-    //       name: { type: 'string' },
-    //       description: { type: 'string' },
-    //       is_public: { type: 'boolean' },
-    //       members: {
-    //         type: 'array',
-    //         itemType: 'string',
-    //         required: false
-    //       }
-    //     });
-    //   } catch (err) {
-    //     ctx.logger.warn(err.errors);
-    //     this.faild(`${err.errors[0].field}:${err.errors[0].message}`)
-    //     return;
-    //   }
-    //   const reqProject = ctx.request.body
-    //   const id = ctx.params.id
-    //   if (!ctx.request.body.is_public) {
-    //     const members = []
-    //     for (let i = 0; i < ctx.request.body.members.length; i++) {
-    //       const user = await Model.User.findOne({ username: ctx.request.body.members[i] })
-    //       if (_.isEmpty(user)) {
-    //         this.faild('创建失败，找不到该用户' + ctx.request.body.members[i])
-    //         return
-    //       }
-    //       if (_.toString(user._id) !== ctx.request.body.create_user) {
-    //         members.push(user)
-    //       }
-    //     }
-    //     reqProject.members = members
-    //   } else {
-    //     reqProject.members = []
-    //   }
-    //   const res = await Model.Project.findByIdAndUpdate(id, reqProject)
-    //   if (_.isEmpty(res)) {
-    //     this.faild('更新失败，未找到该项目')
-    //   }
-    //   this.success(res, 201)
-    // }
-    // async deleteProject() {
-    //   const { ctx } = this
-    //   try {
-    //     ctx.validate({
-    //       id: { type: 'string' }
-    //     });
-    //   } catch (err) {
-    //     ctx.logger.warn(err.errors);
-    //     this.faild(`${err.errors[0].field}:${err.errors[0].message}`)
-    //     return;
-    //   }
-    //   const id = ctx.request.body.id
-    //   const project = await Model.Project.findOne({ id })
-    //   if (_.isEmpty(project)) {
-    //     this.faild('删除失败，未找到该项目')
-    //   } else if (project.create_user !== id) {
-    //     this.faild('删除失败，非项目拥有者无法删除项目')
-    //   }
-    //   await Model.Project.deleteOne({ _id: id })
-    //   this.success('删除成功', 201)
-    // }
-    // async getProjects() {
-    //   const { ctx } = this
-    //   // const pageSize = 20
-    //   // const pageIndex = 1
-    //   // 1: 全部
-    //   // 2: 我创建的
-    //   // 3: 公有项目
-    //   // 4: 私有项目
-    //   const type = Number(ctx.query.type)
-    //   const userId = mongoose.Types.ObjectId(ctx.query.userId)
-    //   if (type === 1) {
-    //     const project = await Model.Project.find().sort({ _id: -1 })
-    //     this.success(project, 200)
-    //   } else if (type === 2) {
-    //     const project = await Model.Project.find({ 'create_user._id': userId }).sort({ _id: -1 })
-    //     this.success(project, 200)
-    //   } else if (type === 3) {
-    //     const project = await Model.Project.find({ is_public: true }).sort({ _id: -1 })
-    //     this.success(project, 200)
-    //   } else if (type === 4) {
-    //     const project = await Model.Project.find({ is_public: false }).sort({ _id: -1 })
-    //     this.success(project, 200)
-    //   } else if (ctx.query.projectId) {
-    //     const project = await Model.Project.findById(ctx.query.projectId)
-    //     this.success(project, 200)
-    //   }
-    // }
+    async getApi() {
+      const { ctx } = this
+      // const pageSize = 20
+      // const pageIndex = 1
+      const method = ctx.query.method
+      let pid = ctx.query.projectId
+      let apiId = ctx.query.apiId
+      if (pid) {
+        pid = mongoose.Types.ObjectId(pid)
+      }
+      if (apiId) {
+        apiId = mongoose.Types.ObjectId(apiId)
+      }
+      const url = ctx.query.url
+      if (method && pid) {
+        const apis = await Model.Api.find({ project: pid, method }).sort({ _id: -1 })
+        this.success(apis, 200)
+      } else if (url && pid) {
+        const api = await Model.Api.findOne({ url, project: pid }).sort({ _id: -1 })
+        if (_.isEmpty(api)) {
+          this.faild('找不到该api')
+          return
+        }
+        this.success(api, 200)
+      } else if (apiId) {
+        const api = await Model.Api.findById(apiId).sort({ _id: -1 })
+        if (_.isEmpty(api)) {
+          this.faild('找不到该api')
+          return
+        }
+        this.success(api, 200)
+      } else if (pid) {
+        const apis = await Model.Api.find({ project: pid }).sort({ _id: -1 })
+        this.success(apis, 200)
+      }
+    }
+    async updateApi() {
+      const { ctx } = this
+      try {
+        ctx.validate({
+          project: { type: 'string' },
+          description: { type: 'string' },
+          url: { type: 'string' },
+          method: { type: 'string' },
+          response_mock: { type: 'object' },
+          response_api_tree: { type: 'array' }
+        });
+      } catch (err) {
+        ctx.logger.warn(err.errors);
+        this.faild(`${err.errors[0].field}:${err.errors[0].message}`)
+        return;
+      }
+      const apiId = ctx.params.id
+      const apiReq = ctx.request.body
+      const res = await Model.Api.findByIdAndUpdate(apiId, apiReq)
+      if (_.isEmpty(res)) {
+        this.faild('更新失败，未找到该项目')
+      }
+      this.success(res, 201)
+    }
+    async deleteApi() {
+      const { ctx } = this
+      try {
+        ctx.validate({
+          id: { type: 'string' }
+        });
+      } catch (err) {
+        ctx.logger.warn(err.errors);
+        this.faild(`${err.errors[0].field}:${err.errors[0].message}`)
+        return;
+      }
+      const id = ctx.request.body.id
+      const api = await Model.Api.findOne({ id })
+      if (_.isEmpty(api)) {
+        this.faild('删除失败，未找到该接口')
+      }
+      await Model.Api.deleteOne({ _id: id })
+      this.success('删除成功', 201)
+    }
   };
 };

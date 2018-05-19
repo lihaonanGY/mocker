@@ -231,6 +231,7 @@
     "dependencies": {
       "axios": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "bcryptjs": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
+      "clipboard": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "cross-env": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "egg": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",
       "egg-cors": "/Users/lihaonan/github-project/mocker/node_modules/egg/config/config.default.js",

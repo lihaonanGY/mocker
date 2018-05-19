@@ -10,9 +10,9 @@
           </div>
         </div>
         <div class="btn-group">
-          <el-button icon="el-icon-refresh" size="small" @click="update()">更新</el-button>
-          <el-button icon="el-icon-view" size="small">测试</el-button>
-          <el-button icon="el-icon-upload2" size="small" @click="create">保存并返回</el-button>
+          <el-button icon="el-icon-refresh" size="small" @click="create(2)">更新</el-button>
+          <el-button icon="el-icon-view" size="small" @click="create(3)">测试</el-button>
+          <el-button icon="el-icon-upload2" size="small" @click="create(1)">保存并返回</el-button>
         </div>
       </div>
     </div>
@@ -272,6 +272,7 @@
     },
     data(){
       return {
+        apiId: '',
         projectId: '',
         project: '',
         data: [{
@@ -294,15 +295,12 @@
     computed: {
     },
     methods: {
-      create () {
+      create (type) {
+        // type:
+        // 1: 保存并返回
+        // 2: 更新
+        // 3: 保存并预览
         // this.formCheck()
-        // if (uniqMembers.length !== members.length) {
-        //   this.$notify({
-        //     message: '团队成员中有重复的成员，请修改',
-        //     type: 'warning'
-        //   })
-        //   return false
-        // }
         const data = {
           project: this.projectId,
           description: this.description,
@@ -311,17 +309,49 @@
           response_mock: this.toMockJs(),
           response_api_tree: this.data
         }
-        this.$fetch({
-          method: 'post',
-          url: `${location.origin}/api/create_api`,
-          data: data
-        })
-        .then(res=> {
-          console.log(res)
-          if (res.data.success) {
-            console.log(666)
-          }
-        })
+        if (this.$getQuery('apiId')) {
+          this.$fetch({
+            method: 'put',
+            url: `${location.origin}/api/update_api/${this.$getQuery('apiId')}`,
+            data: data
+          })
+          .then(res=> {
+            if (res.data.success) {
+              if (type === 1) {
+                window.location.href = `/apilist?projectId=${this.projectId}`
+              } else if (type === 2) {
+                this.$notify({
+                  message: '更新成果',
+                  type: 'success'
+                })
+              } else if (type === 3) {
+                window.open(`${location.origin}/api/mock/${this.projectId}/${res.data.data.url}`)
+              }
+            }
+          })
+        } else {
+          this.$fetch({
+            method: 'post',
+            url: `${location.origin}/api/create_api`,
+            data: data
+          })
+          .then(res=> {
+            if (res.data.success) {
+              if (type === 1) {
+                window.location.href = `/apilist?projectId=${this.projectId}`
+              } else if (type === 2) {
+                this.$notify({
+                  message: '更新成果',
+                  type: 'success'
+                })
+                window.location.href = `/createupdateapi?apiId=${res.data.data._id}&&projectId=${this.projectId}`
+              } else if (type === 3) {
+                window.location.href = `/createupdateapi?apiId=${res.data.data._id}&&projectId=${this.projectId}`
+                window.open(`${location.origin}/api/mock/${this.projectId}/${res.data.data.url}`)
+              }
+            }
+          })
+        }
       },
       loadProject (projectId) {
         this.$fetch({
@@ -346,13 +376,9 @@
         }
         data.children.push(newChild);
       },
-      update () {
-        this.toMockJs()
-      },
       toMockJs () {
         let obj = {}
         this.childrenToMockJs(obj, this.data[0].children, 'Object')
-        console.log('最终结果', obj)
         return obj
       },
       // 待解决问题
@@ -403,11 +429,27 @@
         if (value[1] === 'assignString' || value[1] === 'assignNumber' || value[1] === 'ruleNumber' || value[0] === 'Array') {
           value.push('')
         }
+      },
+      loadApi(apiId, pid) {
+        this.$fetch({
+          method: 'get',
+          url: `${location.origin}/api/get_api?projectId=${pid}&&apiId=${apiId}`
+        })
+        .then(res=> {
+          if (res.data.success) {
+            this.url = res.data.data.url
+            this.methodVal = res.data.data.method
+            this.description = res.data.data.description
+            this.data = res.data.data.response_api_tree
+          }
+        })
       }
     },
     mounted() {
       this.projectId = this.$getQuery('projectId')
-      this.loadProject(this.projectId)
+      this.projectId && this.loadProject(this.projectId)
+      this.apiId = this.$getQuery('apiId')
+      this.apiId && this.loadApi(this.apiId, this.projectId)
     }
   }
 </script>
