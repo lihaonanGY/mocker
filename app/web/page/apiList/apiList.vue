@@ -27,6 +27,7 @@
       <el-tag type="warning">{{baseurl}}</el-tag>
       <el-table
       border
+      class="api-list-table"
       :data="apiList"
       style="width: 100%; margin-top:30px;">
       <el-table-column type="expand">
@@ -58,9 +59,9 @@
         <template slot-scope="scope">
           <el-tag v-if="scope.row.method === 'GET'">{{scope.row.method}}</el-tag>
           <el-tag v-if="scope.row.method === 'POST'" type="success">{{scope.row.method}}</el-tag>
-          <el-tag v-if="scope.row.method === 'PATCH'" type="info">{{scope.row.method}}</el-tag>
-          <el-tag v-if="scope.row.method === 'DELETE'" type="warning">{{scope.row.method}}</el-tag>
-          <el-tag v-if="scope.row.method === 'PUT'" type="danger">{{scope.row.method}}</el-tag>
+          <el-tag v-if="scope.row.method === 'PATCH'" type="warning">{{scope.row.method}}</el-tag>
+          <el-tag v-if="scope.row.method === 'DELETE'" type="danger">{{scope.row.method}}</el-tag>
+          <el-tag v-if="scope.row.method === 'PUT'" type="info">{{scope.row.method}}</el-tag>
         </template>
       </el-table-column>
       <el-table-column
@@ -75,7 +76,7 @@
         width="250"
         fixed="right"
         label="操作">
-        <template slot-scope="scope">
+        <template slot-scope="scope" class="api-list-btn-group">
           <el-button type="primary" icon="el-icon-edit" circle title="编辑接口" @click="jumpUpdateApi(scope.row._id)"></el-button>
           <el-button icon="el-icon-view" circle title="预览接口" @click="seeApi(scope.row.url)"></el-button>
           <el-button class="copy-url" type="success" icon="el-icon-share" circle title="复制接口地址" @click="copyUrl(scope.row.apiTestUrl)"></el-button>
@@ -274,4 +275,13 @@
   }
 }
 </style>
+<style>
+.container .api-list-table .el-table__row td {
+  padding: 3px 0;
+}
+.el-button+.el-button {
+  margin-left: 3px;
+}
+</style>
+
 

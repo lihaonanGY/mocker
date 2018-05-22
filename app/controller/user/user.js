@@ -60,6 +60,7 @@ module.exports = app => {
         this.faild('请检查密码是否正确')
         return
       }
+      // 返回用户鉴权时所需要的token
       const token = app.jwt.sign({ foo: 'bar' }, app.config.jwt.secret);
       this.success({
         token,
