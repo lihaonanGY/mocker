@@ -15,13 +15,13 @@
       "domainWhiteList": [
         "http://localhost:7001",
         "http://127.0.0.1:7001",
-        "http://192.168.43.71:7001",
+        "http://172.20.10.3:7001",
         "http://localhost:9000",
         "http://127.0.0.1:9000",
-        "http://192.168.43.71:9000",
+        "http://172.20.10.3:9000",
         "http://localhost:9001",
         "http://127.0.0.1:9001",
-        "http://192.168.43.71:9001"
+        "http://172.20.10.3:9001"
       ],
       "protocolWhiteList": [],
       "defaultMiddleware": "csrf,hsts,methodnoallow,noopen,nosniff,csp,xssProtection,xframe,dta",
